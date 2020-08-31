@@ -1,0 +1,21 @@
+spring.application.name=service-item
+server.port=8002
+
+#Para escalar la aplicacion: (balanceador de cargas)
+#Debido a que Eureka guarda un registro de las IPS, ubicacacion fisica y puertos
+#no es necesario configurar Ribbon, ya eureka lo hace por nosotros
+#service-product.ribbon.listOfServers=localhost:8001,localhost:9001
+
+#Eureka Configuration
+eureka.client.service-url.defaultZone=http://service-eureka-server:8761/eureka
+
+#Configurating the timeOut with Hystrix & Ribbon in order to avoid the timeout errors (due docker images)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon.ConnectTimeout: 9000
+ribbon.ReadTimeout: 30000
+
+#Cambia la probabilidad que usa para  enviar las trazas a Zipkin de  de 0.1 a 1 (para enviar todas)
+spring.sleuth.sampler.probability=1.0
+
+#Opcional para buscar al servidor en local por el puerto 9411
+spring.zipkin.base-url=http://zipkin-server:9411/

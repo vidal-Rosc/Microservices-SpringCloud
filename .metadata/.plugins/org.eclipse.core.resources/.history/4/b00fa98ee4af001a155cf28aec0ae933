@@ -1,0 +1,28 @@
+package com.springboot.oauth.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.springboot.commons.models.entity.Usser;
+import com.springboot.oauth.client.IFeignUserClient;
+
+public class UserService implements UserDetailsService {
+
+	@Autowired
+	private IFeignUserClient FeignClient;
+	
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Usser user = FeignClient.findByUsername(username);
+		List<GrantedAuthority> authorities = user.getRoles().stream().map(role-> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+		return new User(user.getUsername(), user.getPassword(), user.getEnabled(), true, true, true, authorities);
+
+}

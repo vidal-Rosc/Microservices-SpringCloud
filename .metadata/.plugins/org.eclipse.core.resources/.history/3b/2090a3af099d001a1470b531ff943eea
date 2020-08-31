@@ -1,0 +1,36 @@
+package com.springboot.item.models.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+
+import com.springboot.item.clients.IProductClientRest;
+import com.springboot.item.models.Item;
+
+
+@Service("feignService") //se le puede dar nombre a este componente
+@Primary //Al tener dos ItemServices (itemService y ItemServiceFeign), Spring no sabe cual de los dos implementar, esta anotacion hace de este servicio el que se debe implementar
+public class ItemServiceFeign implements IItemService {
+	@Autowired
+	private IProductClientRest feignClient;
+	
+	@Override
+	public List<Item> findAll() {
+		//Para convertir un objeto Producto en un Objeto Item. y pasarlos a ser List
+		return feignClient.productList().stream().map(p -> new Item(p, 1)).collect(Collectors.toList());
+	}
+
+
+	@Override
+	public Item findById(Long id, Integer quantity) {
+		return new Item(feignClient.productDetail(id), quantity);
+	}
+
+}
+
+
+//Al estar con la anotacion @FeignClient pasa a ser un componente manejado por Spring, pudiendose inyectar
+//por lo tanto los metodos arriba, se implementaran en tiempo de ejecucion

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Product.java&apos; to &apos;springboot-service-commons/src/main/java/com.springboot.commons.models.entity&apos;&#x0D;&#x0A;- Original project: &apos;springboot-service-product&apos;&#x0D;&#x0A;- Destination element: &apos;springboot-service-commons/src/main/java/com.springboot.commons.models.entity&apos;&#x0D;&#x0A;- Original element: &apos;com.springboot.product.models.entity.Product.java&apos;" description="Copy compilation unit" destination="=springboot-service-commons/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.springboot.commons.models.entity" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.springboot.product.models.entity{Product.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1591775234934" units="1" version="1.0"/>
+</session>

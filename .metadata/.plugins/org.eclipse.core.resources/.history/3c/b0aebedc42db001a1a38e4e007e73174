@@ -1,0 +1,26 @@
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('vidalRosc', '$2a$10$OSDGo2vgSefUfLKkTGOsN.cNKw49kPxqMWpN3vOTlLDKkxiYzb2Ui', 'Vidal','Rosas', 'vidalrosc@gmail.com', 0787665786,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('pepitoPep', '$2a$10$ozyC6F/8L/4Y372wo/X/4ul4GVMC8c6MOAEUSHQgMi2AknzJtRh8i', 'Pedro','Perez ', 'pedrito@gmail.com', 0758869982,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('manulechuck ', '$2a$10$n0bdxGoxrdlmG.jygEHcoeZaHvc6OPeGmnrMX2feCTozj1tZcE9P2', 'Manuel','Lechuga', 'manulechuck@hotmail.com', 0000000000,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('laBaronesa', '$2a$10$cPig2pcHweUPlDIntsnhveYbNMfcHhiW/5Poymm7l/3ySvD88eNWO', 'Cristian','Leon', 'rafaelito858@hotmail.com', 0787556996,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('nemesis69', '$2a$10$hbZvolNYyvSMjFVyKPhkBeEanRLeBC6cnJtoMgQC5z5IQv3dboXrS', 'Jason','Leon', 'labruja@gmail.com', 0758994235,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('baello29', '$2a$10$6x83Ixht67XHD37AME9wcuTWA11HY3U.A0wnJk.FJ675ySB1J0Akq', 'Daniel','Baello', 'baellito1@gmail.com', 0768445963,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('kegu', '$2a$10$E02RNs/XXj7rSj94DkA7hOBGZUbxgHGnwmXS10dON4ByGhlLOBQby', 'Guy','Kellenberger', 'guy@gmx.ch', 0785441236,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('Cmaria80', '$2a$10$pqxkr5k1eFLrsJ1dglCeA.jr9KpI.GH/XfrbSzzLjuiNIMq5KArcG', 'Carmen','Fuentes', 'cfuentes@yahoo.com', 0786552547,1);
+INSERT INTO `users` (username, password, name, surname, email, telephone, enabled) VALUES ('EmiPerez23', '$2a$10$qmbAXLmZoCLQE3hXokgB5emGhFXNSIMxQifciuGdwnjCryJySirU2', 'Emilio','Perez', 'perezemilio23@yahoo.com', 0747995326,1);
+
+
+INSERT INTO `roles` (name, description) VALUES ('ROLE_ADMIN', 'Defines which data is available to users');
+INSERT INTO `roles` (name, description) VALUES ('ROLE_INTERNAL', 'Internal users at the parent project level. They have access to the entire project. When a resource is assigned permissions within a sub-task, the user is limited to the information contained within the sub-project, without access to the Parent project.');
+INSERT INTO `roles` (name, description) VALUES ('ROLE_FINANCIAL', 'Users with financial permissions can view and modify financial data across the organization');
+INSERT INTO `roles` (name, description) VALUES ('ROLE_EXTERNAL', 'When assigned as an external user on the parent project level, the user cannot view any part of the project.');
+
+
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (1, 1);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (2, 2);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (3, 2);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (4, 3);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (5, 3);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (6, 3);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (7, 2);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (8, 2);
+INSERT INTO `users_and_roles` (user_id, role_id) VALUES (9, 4);
